@@ -6,6 +6,9 @@ const clear = document.getElementById('clear');
 const range = document.getElementById('range');
 
 
+clear.onclick = () => clearGrid();
+
+
 function getGrid(size){
     for(let i = 1; i <= size * size; i++){
             const div = document.createElement('div');
@@ -18,11 +21,20 @@ function getGrid(size){
     }
 }
 
-getGrid(16);
+getGrid(16); // initial grid
+
+function clearGrid() {
+    main.innerHTML = ''
+    getGrid(16)
+}
+
 
 
 function changeColor(e){
     e.target.style.background = 'red'
-
+    
     console.log(e.type)
+
+
 }
+
