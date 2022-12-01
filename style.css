@@ -47,6 +47,7 @@ h1 {
     font-size: 15px;
     text-transform: uppercase;
     padding: 10px 0px;
+    border-radius: 5px;
 }
 
 .btn:hover{
@@ -114,8 +115,8 @@ input[type="color"]::-webkit-color-swatch {
 .main {
     display: flex;
     flex-wrap: wrap;
-    /* gap: 1px; */
-    width: 400px;
+    gap: 1px;
+    width: 416px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
