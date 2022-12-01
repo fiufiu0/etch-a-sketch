@@ -9,9 +9,14 @@
     <script src="app.js" defer></script>
   </head>
   <body>
+    <h1>Etch-a-sketch</h1>
     <div class="container">
       <div class="settings">
-        <input type="color" id="picker" name="picker" value="#e66465" />
+        <div class="settings-color">
+          <button class="btn btn-color">Color</button>
+          <input type="color" id="picker" name="picker" value="#e66465" />
+        </div>
+
         <button class="btn" id="rainbow">Rainbow!</button>
         <button class="btn" id="clear">Clear</button>
         <p>16 x 16</p>
