@@ -13,6 +13,7 @@ clear.onclick = () => clearGrid();
 rainbow.onclick = () => setMode('rainbow');
 colorBtn.onclick = () => setMode('color');
 picker.onclick = () => setMode('picker');
+eraser.onclick = () => setMode('eraser');
 
 
 function getGrid(size){
@@ -35,7 +36,16 @@ function clearGrid() {
 }
 
 function changeColor(e){
-    e.target.style.background = 'red';
+   
+    if(MODE === 'rainbow'){
+        e.target.style.background = randomColor();
+    } else if (MODE === 'eraser'){
+        e.target.style.background = "#fefae0";
+    } else if (MODE === 'color'){
+        e.target.style.background = COLOR;
+    } else if (MODE === 'picker'){
+        e.target.style.background = picker.value;
+    }
 
 }
 
