@@ -6,7 +6,9 @@ const clear = document.getElementById('clear');
 const range = document.getElementById('range');
 
 
+
 clear.onclick = () => clearGrid();
+rainbow.onclick = () => randomColor();
 
 
 function getGrid(size){
@@ -28,13 +30,20 @@ function clearGrid() {
     getGrid(16)
 }
 
-
-
 function changeColor(e){
-    e.target.style.background = 'red'
-    
-    console.log(e.type)
-
+    e.target.style.background = 'red';
 
 }
 
+function randomNumber(){
+    return Math.floor(Math.random() * 255);
+}
+
+function randomColor(e){
+     let r = randomNumber();
+     let g = randomNumber();
+     let b = randomNumber();
+    
+    return `rgb(${r},${g},${b})`;
+
+}
