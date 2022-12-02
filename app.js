@@ -2,13 +2,17 @@ const main = document.querySelector('.main');
 const colorBtn = document.querySelector('.btn-color');
 const picker = document.getElementById('picker');
 const rainbow = document.getElementById('rainbow');
+const eraser = document.getElementById('eraser');
 const clear = document.getElementById('clear');
 const range = document.getElementById('range');
 
-
+let COLOR = '#d4a373';
+let MODE = 'color';
 
 clear.onclick = () => clearGrid();
-rainbow.onclick = () => randomColor();
+rainbow.onclick = () => setMode('rainbow');
+colorBtn.onclick = () => setMode('color');
+picker.onclick = () => setMode('picker');
 
 
 function getGrid(size){
@@ -35,11 +39,23 @@ function changeColor(e){
 
 }
 
+function setMode(mode){
+    if(mode === 'rainbow'){
+        MODE = 'rainbow';
+    } else if(mode === 'eraser'){
+        MODE = 'eraser'
+    } else if(mode === 'color'){
+        MODE = 'color'
+    } else if(mode === 'picker'){
+        MODE = 'picker';
+    }
+}
+
 function randomNumber(){
     return Math.floor(Math.random() * 255);
 }
 
-function randomColor(e){
+function randomColor(){
      let r = randomNumber();
      let g = randomNumber();
      let b = randomNumber();
