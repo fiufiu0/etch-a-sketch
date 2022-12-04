@@ -6,7 +6,6 @@ const eraser = document.getElementById('eraser');
 const clear = document.getElementById('clear');
 const range = document.getElementById('range');
 
-let COLOR = '#d4a373';
 let MODE = 'color';
 
 clear.onclick = () => clearGrid();
@@ -41,24 +40,14 @@ function changeColor(e){
         e.target.style.background = randomColor();
     } else if (MODE === 'eraser'){
         e.target.style.background = "#fefae0";
-    } else if (MODE === 'color'){
-        e.target.style.background = COLOR;
-    } else if (MODE === 'picker'){
+    } else if (MODE === 'picker' || MODE === 'color'){
         e.target.style.background = picker.value;
-    }
+    } 
 
 }
 
 function setMode(mode){
-    if(mode === 'rainbow'){
-        MODE = 'rainbow';
-    } else if(mode === 'eraser'){
-        MODE = 'eraser'
-    } else if(mode === 'color'){
-        MODE = 'color'
-    } else if(mode === 'picker'){
-        MODE = 'picker';
-    }
+    return MODE = mode;
 }
 
 function randomNumber(){
