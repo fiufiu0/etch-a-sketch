@@ -40,7 +40,7 @@ getGrid(16); // initial grid 16x16
 
 function clearGrid() {
     main.innerHTML = '';
-    getGrid(16)
+    getGrid(range.value);
 }
 
 function changeColor(e){
@@ -56,6 +56,17 @@ function changeColor(e){
 }
 
 function setMode(mode){
+    // if(mode === 'rainbow'){
+    //     MODE = 'rainbow';
+    // } else if(mode === 'eraser'){
+    //     MODE = 'eraser'
+    // } else if(mode === 'color'){
+    //     MODE = 'color'
+    // } else if(mode === 'picker'){
+    //     MODE = 'picker';
+    // }
+
+    // do kazdego dodac klase a jesli nie to remove ?
     return MODE = mode;
 }
 
