@@ -123,5 +123,6 @@ input[type="color"]::-webkit-color-swatch {
 
 .grid {
     background: #fefae0;
+    user-select: none;
 }
 
