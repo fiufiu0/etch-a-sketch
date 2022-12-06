@@ -9,6 +9,7 @@ const btn = document.querySelectorAll('button');
 const p = document.getElementById('value');
 
 let MODE = 'color';
+let mouse = false;
 
 clear.onclick = () => clearGrid();
 rainbow.onclick = () => setMode('rainbow');
@@ -18,6 +19,7 @@ eraser.onclick = () => setMode('eraser');
 range.onchange = () => {
     getGrid(range.value); // reload grid if range is changed
     p.textContent = `${range.value} x ${range.value}`;
+    clearGrid(); // clear grid if size is changed
 }
 
 
@@ -43,8 +45,21 @@ function clearGrid() {
     getGrid(range.value);
 }
 
+main.onmousedown = () => {
+    mouse = !mouse;
+}
+
+main.onmouseup = () => {
+    mouse = !mouse;
+}
+
+
 function changeColor(e){
-   
+    
+    if(e.type === 'mouseover' && !mouse) {
+        return
+    } 
+    
     if(MODE === 'rainbow'){
         e.target.style.background = randomColor();
     } else if (MODE === 'eraser'){
@@ -56,17 +71,6 @@ function changeColor(e){
 }
 
 function setMode(mode){
-    // if(mode === 'rainbow'){
-    //     MODE = 'rainbow';
-    // } else if(mode === 'eraser'){
-    //     MODE = 'eraser'
-    // } else if(mode === 'color'){
-    //     MODE = 'color'
-    // } else if(mode === 'picker'){
-    //     MODE = 'picker';
-    // }
-
-    // do kazdego dodac klase a jesli nie to remove ?
     return MODE = mode;
 }
 
