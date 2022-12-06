@@ -16,8 +16,8 @@ body {
 h1 {
     color: #d4a373;
     text-align: center;
-    padding: 50px 0;
-    font-weight: 500;
+    padding: 35px 0;
+    font-weight: 700;
     text-transform: uppercase;
 }
 
@@ -115,16 +115,13 @@ input[type="color"]::-webkit-color-swatch {
 
 .main {
     display: grid;
-    grid-template-columns: repeat(16, 1fr);
-    grid-template-rows: repeat(16, 1fr);
-    gap: 1px;
-    width: 415px;
+    /* gap: 1px; */
+    width: 450px;
+    height: 450px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .grid {
-    width: 25px;
-    height: 25px;
     background: #fefae0;
 }
 

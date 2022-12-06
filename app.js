@@ -5,6 +5,8 @@ const rainbow = document.getElementById('rainbow');
 const eraser = document.getElementById('eraser');
 const clear = document.getElementById('clear');
 const range = document.getElementById('range');
+const btn = document.querySelectorAll('button');
+const p = document.getElementById('value');
 
 let MODE = 'color';
 
@@ -13,12 +15,19 @@ rainbow.onclick = () => setMode('rainbow');
 colorBtn.onclick = () => setMode('color');
 picker.onclick = () => setMode('picker');
 eraser.onclick = () => setMode('eraser');
+range.onchange = () => {
+    getGrid(range.value); // reload grid if range is changed
+    p.textContent = `${range.value} x ${range.value}`;
+}
 
 
 function getGrid(size){
     for(let i = 1; i <= size * size; i++){
             const div = document.createElement('div');
-            div.classList.add('grid')
+            div.classList.add('grid');
+
+            main.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+            main.style.gridTemplateRows = `repeat(${size}, 1fr)`;
 
             div.addEventListener('mouseover', changeColor);
             div.addEventListener('mousedown', changeColor);
@@ -27,10 +36,10 @@ function getGrid(size){
     }
 }
 
-getGrid(16); // initial grid
+getGrid(16); // initial grid 16x16
 
 function clearGrid() {
-    main.innerHTML = ''
+    main.innerHTML = '';
     getGrid(16)
 }
 
