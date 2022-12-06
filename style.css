@@ -25,7 +25,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
@@ -50,6 +50,10 @@ h1 {
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.24) 2px 3px 4px;
     
+}
+
+.active {
+    background: #eba866;
 }
 
 .btn:hover{
@@ -102,18 +106,19 @@ input[type="color"]::-webkit-color-swatch {
   
   input[type='range']::-webkit-slider-thumb {
     -webkit-appearance: none;
-    width: 15px;
-    height: 15px;
+    width: 9px;
+    height: 20px;
     border-radius: 10px;
-    margin-top: -3px;
+    margin-top: -6px;
     background: #d4a373;
   }
 
 .main {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
     gap: 1px;
-    width: 416px;
+    width: 415px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
