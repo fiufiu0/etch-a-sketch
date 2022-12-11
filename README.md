@@ -8,3 +8,8 @@ Etch-a-setch project from The Odin Project.
 ### Live version
 
 - [github pages](https://lukaszgromadzki.github.io/etch-a-sketch/)
+
+
+### Screenshot
+
+![](images/readme_img.png)
